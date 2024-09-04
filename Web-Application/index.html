@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexaware E-Learning</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <img src="https://as2.ftcdn.net/v2/jpg/01/92/41/45/1000_F_192414550_6yGegVkT2bJwCjeZq7Tw7iuLNkoWKzYH.jpg"
+                alt="Hexaware Logo" class="logo">
+            <h1 class="title" style="font-family: sans-serif;"><i>HexaSkills</i></h1>
+            <nav class="navbar">
+                <a href="#about">About Us</a>
+                <a href="#courses">Courses</a>
+                <a href="#contact">Contact</a>
+                <button class="login-btn" onclick="showLoginModal()">Login</button>
+                <div class="profile-container">
+                    <button class="profile-btn" onclick="toggleProfileMenu()">
+                        <i class="fas fa-user-circle"></i> &nbsp; My Profile
+                    </button>
+                    <div id="profileMenu" class="profile-menu">
+
+                        <a href="#" onclick="viewProfile()">View Profile</a>
+                        <a href="#">Edit Profile</a>
+                        <a href="#">Logout</a>
+                    </div>
+                    <div id="profileModal" class="modal1">
+
+                        <div class="modal-content1">
+                            <span class="close1" onclick="closeModals()">&times;</span>
+                            <h2>
+                                <center>User Profile</center>
+                            </h2>
+                            <div id="profileDetails">
+                                <!-- User details will be dynamically inserted here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+
+        </div>
+    </header>
+    
+    <script>
+        window.embeddedChatbotConfig = {
+        chatbotId: "VqnD8SZflr8PUQLPjxKvO",
+        domain: "www.chatbase.co"
+        }
+        </script>
+        <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="VqnD8SZflr8PUQLPjxKvO"
+        domain="www.chatbase.co"
+        defer>
+        </script>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>The future of learning is digital literacy.</h2>
+            <p>The skills required to achieve digital competence and use of Information and Communication Technology
+                (ICT) for work, leisure, learning, and communication.</p>
+                <center>
+            <button class="get-started-btn" onclick="showSignupModal()">Get Started</button>
+                </center>
+        </div>
+    </section>
+    
+    <section id="courses" class="courses-section">
+        <h2>Our Courses</h2>
+        <div class="courses-container">
+            <div class="course-card">
+                <img src="https://logos-world.net/wp-content/uploads/2022/07/Java-Logo.png" alt="Java Logo">
+                <h3> Java Programming </h3>
+            </div>
+            <div class="course-card1">
+                <img src="https://cdn.prod.website-files.com/6047a9e35e5dc54ac86ddd90/63064f1fedf422395124660e_e7d03466.png"
+                    alt="Net logo">
+                <h3> .NET Development </h3>
+            </div>
+            <div class="course-card2">
+                <img src="https://png.pngtree.com/png-clipart/20230817/original/pngtree-vector-illustration-of-an-icon-of-the-python-programming-language-picture-image_8000951.png"
+                    alt="python-logo">
+                <h3> Python Programming </h3>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <div class="about-container">
+            <p class="quote"><b><i>“Creating smiles for our customers is what Hexawarians do best, utilizing their exceptional skills to
+                harness the magic of technology.”</i></b>
+            
+            </p>
+            <p>
+                Welcome to <b>HexaSkills</b>, an innovative <b>Skill Navigator</b> platform dedicated to enhancing training and development for candidates in technical fields. Our mission is to empower individuals by providing a comprehensive system that collects essential information, allocates training batches based on specific criteria, and tracks progress effectively.</p>
+
+               <p> With advanced <b>GenAI</b> Integration  , we offer personalized learning paths and actionable recommendations, ensuring candidates focus on areas for improvement. Our platform also facilitates seamless feedback collection, allowing us to continuously refine our training programs.</p>
+                
+                <p>Join us at HexaSkills as we unlock potential and drive success in the dynamic world of technology.</p>
+        </div>
+    </section>
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <p>If you have any questions, feedback, or inquiries, feel free to reach out to us via email. We look forward to hearing from you!
+
+                <a href="mailto:support@example.com">Hexaware@Official.com</a>
+                
+                </p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Hexaware E-Learning. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModals()">&times;</span>
+            <h2>
+                <center>Login</center>
+            </h2>
+            <form id="loginForm">
+
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <div class="password-container">
+                    <input type="password" id="signupPassword1" placeholder="Password" minlength="10" required>
+                    <i id="togglePassword1" class="fas fa-eye"></i>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <br>
+            <p>
+                <center>-- OR --</center>
+            </p>
+            <br>
+            <!-- Social Media Login Options -->
+            <div class="social-signup">
+                <center>
+                    <a href="https://accounts.google.com/o/oauth2/auth?client_id=YOUR_GOOGLE_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=email"
+                        class="social-button google" target="_blank">
+                        <i class="fab fa-google"></i> Google
+                    </a>
+                    <a href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=YOUR_LINKEDIN_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&scope=r_liteprofile%20r_emailaddress"
+                        class="social-button linkedin" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/login/oauth/authorize?client_id=YOUR_GITHUB_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&scope=user:email"
+                        class="social-button github" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </center>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModals()">&times;</span>
+            <h2>
+                <center>Sign Up</center>
+            </h2>
+            <form id="signupForm">
+                <input id="fname" type="text" placeholder="First Name" required>
+                <input id="lname" type="text" placeholder="Last Name" required>
+                <input id="email" type="email" placeholder="Enter your email" required>
+                &nbsp;
+                &nbsp;
+                <!-- Send OTP button calls the JavaScript function directly -->
+                <button id="sendOtpBtn" type="button" class="btn" onclick="sendOtp()">Send OTP</button>
+
+                <div class="otpverify">
+                    <input type="text" id="otp_inp" placeholder="Enter OTP" required>
+                    &nbsp;
+                    &nbsp;
+                    <button type="button" class="btn" id="otp-btn">Verify OTP</button>
+                </div>
+
+                <div class="password-container">
+                    <input type="password" id="signupPassword" placeholder="Password" minlength="10" required>
+                    <i id="togglePassword" class="fas fa-eye"></i>
+                </div>
+
+                <button type="button" onclick="location.href='details.html'">Sign Up</button>
+
+            </form>
+            <br>
+            <p>
+                <center>-- OR --</center>
+            </p>
+            <br>
+            <!-- Social Media Signup Options -->
+            <!-- Social Media Signup Options -->
+            <div class="social-signup">
+                <center>
+                    <a href="https://accounts.google.com/o/oauth2/auth?client_id=YOUR_GOOGLE_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=email"
+                        class="social-button google" target="_blank">
+                        <i class="fab fa-google"></i> Google
+                    </a>
+                    <a href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=YOUR_LINKEDIN_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&scope=r_liteprofile%20r_emailaddress"
+                        class="social-button linkedin" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/login/oauth/authorize?client_id=YOUR_GITHUB_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&scope=user:email"
+                        class="social-button github" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </center>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Alert Modal -->
+    <div id="customAlert" class="custom-alert" style="display: none;">
+        <div class="custom-alert-content">
+            <span class="close" onclick="closeCustomAlert()">&times;</span>
+            <span id="customAlertMessage">Message goes here</span>
+            <button onclick="closeCustomAlert()">OK</button>
+        </div>
+    </div>
+
+    <!-- Include Your JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details Form</title>
+    <script src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
+            height: 100%;
+            width: 100%;
+            background: url("https://img.freepik.com/premium-photo/office-desktop-laptop-notebook-pen-black-background-top-view-free-space-text-copy-space_641503-295915.jpg") no-repeat center center fixed;
+            background-size: cover;
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 600px;
+            height: 80vh;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(30px);
+            overflow-y: scroll;
+        }
+
+        /* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+        .container::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+
+        /* Hide scrollbar for Firefox */
+        .container {
+            scrollbar-width: none;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-group input[type="file"] {
+            padding: 0;
+        }
+
+        .form-group button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+
+        #internship_details {
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+        }
+
+        .internship-group {
+            margin-bottom: 10px;
+        }
+
+        .internship-group label {
+            font-weight: normal;
+        }
+
+        .internship-group input {
+            width: 80%;
+        }
+
+        .flex-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .flex-container .internship-group {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>User Details Form</h2>
+        <form id="user-details-form" action="/submit_form" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="degree">Degree</label>
+                <input type="text" id="degree" name="degree">
+            </div>
+
+            <div class="form-group">
+                <label for="specialization">Specialization</label>
+                <input type="text" id="specialization" name="specialization">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="certifications">Certifications (AWS, Azure, NPTEL, etc.)</label>
+                <textarea id="certifications" name="certifications"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="internship_details">Internship Details</label>
+                <div id="internship_details">
+                    <div class="internship-group">
+                        <label for="comp-name">Company Name</label>
+                        <input type="text" id="comp-name" name="internship_company">
+                    </div>
+                    <div class="flex-container">
+                        <div class="internship-group">
+                            <label for="start-date">Start Date</label>
+                            <input type="date" id="start-date" name="internship_start_date">
+                        </div>
+                        <div class="internship-group">
+                            <label for="end-date">End Date</label>
+                            <input type="date" id="end-date" name="internship_end_date">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="courses_comp">Courses Completed (Udemy, Coursera, etc.)</label>
+                <textarea id="courses_comp" name="courses"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="linkedin">LinkedIn Profile Link</label>
+                <input type="url" id="linkedin" name="linkedin">
+            </div>
+
+            <div class="form-group">
+                <label for="github">GitHub Profile Link</label>
+                <input type="url" id="github" name="github">
+            </div>
+
+            <div class="form-group">
+                <label for="languages">Programming Languages Known</label>
+                <textarea id="languages" name="languages"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="certificates_certifications">Upload e-Certificates for Certifications</label>
+                <input type="file" id="certificates_certifications" name="certificates_certifications" accept=".pdf,.jpg,.jpeg,.png">
+            </div>
+
+            <div class="form-group">
+                <label for="certificates_internships">Upload Internships Completion Certificate</label>
+                <input type="file" id="certificates_internships" name="certificates_internships" accept=".pdf,.jpg,.jpeg,.png">
+            </div>
+
+            <div class="form-group">
+                <label for="certificates_courses">Upload e-Certificates for Courses Completed</label>
+                <input type="file" id="certificates_courses" name="certificates_courses" accept=".pdf,.jpg,.jpeg,.png">
+            </div>
+
+            <div class="form-group">
+                <center><button type="submit">Submit</button></center>
+            </div>
+        </form>
+    </div>
+
+</body>
+<script>
+    document.getElementById('user-details-form').addEventListener('submit', function(event) {
+        event.preventDefault();  // Prevent the default form submission
+
+        var deg = document.getElementById('degree').value;
+        var pho = document.getElementById('phone').value;
+        var lin = document.getElementById('linkedin').value;
+        var git = document.getElementById('github').value;
+        
+        var ln = document.getElementById('name').value;
+        var em = document.getElementById('email').value;
+         
+    
+        localStorage.setItem("ln1", ln);
+        localStorage.setItem("em1", em);
+        
+        
+        
+        localStorage.setItem("deg1", deg);
+        localStorage.setItem("pho1", pho);
+        localStorage.setItem("lin1", lin);
+        localStorage.setItem("git1", git);
+
+       
+        // Redirect after storing data
+        window.location.href = "index.html";
+    });
+</script>
+
+</html>
